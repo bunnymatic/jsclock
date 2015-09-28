@@ -1,0 +1,33 @@
+<html>
+  <style>
+    * {
+    font-family: helvetica;
+    font-size: 20vw;
+    background-color: #222;
+    color: #cf2;
+    }
+
+    #clock {
+    margin: 30% auto;
+    text-align:center;
+    transform: translateY(-50%);
+    }
+  </style>
+  <script type="text/javascript">
+    function updateTime() {
+    var el = document.getElementById('clock');
+    var now = new Date();
+    var hr = ("0" + now.getHours()).substr(-2);
+    var mn = ("0" + now.getMinutes()).substr(-2);
+    var sec = ("0" + now.getSeconds()).substr(-2);
+
+    el.innerHTML = [ hr , mn, sec ].join(":");
+    }
+
+    setInterval(updateTime, 500);
+  </script>
+  <body>
+
+    <div id="clock"></div>
+  </body>
+</html >
